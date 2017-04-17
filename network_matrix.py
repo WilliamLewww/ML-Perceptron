@@ -19,6 +19,12 @@ def __purelin(value, derivative = 0):
     
     return value
     
+def __tanh(value, derivative = 0):
+    if derivative == 1:
+        return 1 - (np.tanh(value) ** 2)
+    
+    return np.tanh(value)
+    
 def generate_array(array, output = 0):
     if output == 1:
         return np.array(array).T
@@ -38,6 +44,8 @@ def generate_activation(array):
             temp_list.append(__purelin)
         if x == 1:
             temp_list.append(__logsig)
+        if x == 2:
+            temp_list.append(__tanh)
     
     return temp_list
     

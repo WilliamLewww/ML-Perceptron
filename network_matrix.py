@@ -49,7 +49,17 @@ def generate_activation(array):
     
     return temp_list
     
-def feedforward_and_backpropagate(loop_count, synapse_list, input_case, output_case, activation_list = None):
+def feedforward(input_case, synapse_list, activation_list = None):
+    if activation_list == None:
+        activation_list = [__logsig for x in range(len(synapse_list))]
+        
+    layer_list = [input_case]
+    for x in range(len(synapse_list)):
+        layer_list.append(activation_list[x](np.dot(layer_list[x], synapse_list[x])))
+            
+    return layer_list[len(layer_list) - 1]
+    
+def feedforward_and_backpropagate(loop_count, synapse_list, input_case, output_case, learning_rate = 0.15, activation_list = None):
     if activation_list == None:
         activation_list = [__logsig for x in range(len(synapse_list))]
         
@@ -65,6 +75,6 @@ def feedforward_and_backpropagate(loop_count, synapse_list, input_case, output_c
             layer_delta_list.append(layer_delta_list[len(layer_delta_list) - 1].dot(synapse_list[x + 1].T) * activation_list[x](layer_list[x + 1], 1))
         
         for x in range(len(synapse_list)):
-            synapse_list[x] += layer_list[x].T.dot(layer_delta_list[len(synapse_list) - x - 1])
+            synapse_list[x] += layer_list[x].T.dot(layer_delta_list[len(synapse_list) - x - 1]) * learning_rate
             
     return layer_list[len(layer_list) - 1]

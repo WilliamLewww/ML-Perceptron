@@ -1,3 +1,5 @@
+#Fully Connected Recurrent Neural Network
+#by William Lew
 import numpy as np
 import math
 def __logsig(value, derivative = 0):

@@ -1,0 +1,936 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"slide",
+				"slideDistance"
+			],
+			[
+				"Vect",
+				"Vector3"
+			],
+			[
+				"tha",
+				"thaneColor"
+			],
+			[
+				"vis",
+				"visibleRange"
+			],
+			[
+				"Sc",
+				"SCREENHEIGHT"
+			],
+			[
+				"tem",
+				"tempPolygon"
+			],
+			[
+				"visi",
+				"visibleRange"
+			],
+			[
+				"vi",
+				"visibleFrame"
+			],
+			[
+				"spee",
+				"speedZone"
+			],
+			[
+				"ini",
+				"initialSpeed"
+			],
+			[
+				"break",
+				"breakSpeed"
+			],
+			[
+				"speed",
+				"speedZone"
+			],
+			[
+				"ra",
+				"railList"
+			],
+			[
+				"index",
+				"indexBottom"
+			],
+			[
+				"drawL",
+				"drawLineStrip"
+			],
+			[
+				"var",
+				"var_B"
+			],
+			[
+				"cou",
+				"counter〔variable〕"
+			],
+			[
+				"coun",
+				"counter_prime"
+			],
+			[
+				"iter",
+				"iterator〔variable〕"
+			],
+			[
+				"gen",
+				"genPresetA"
+			],
+			[
+				"track",
+				"trackCarveUp"
+			],
+			[
+				"spa",
+				"spacingX"
+			],
+			[
+				"sp",
+				"speedZone"
+			],
+			[
+				"vec",
+				"vector\tstd::vector"
+			],
+			[
+				"tur",
+				"turnLeft"
+			],
+			[
+				"sli",
+				"slideRight"
+			],
+			[
+				"tu",
+				"turnRight"
+			],
+			[
+				"turn",
+				"turnRight"
+			],
+			[
+				"co",
+				"controllerPad"
+			],
+			[
+				"rec",
+				"rectangleList"
+			],
+			[
+				"slid",
+				"slideLeft"
+			],
+			[
+				"po",
+				"posArgs"
+			],
+			[
+				"butt",
+				"button"
+			],
+			[
+				"poi",
+				"pointB"
+			],
+			[
+				"poin",
+				"pointA"
+			],
+			[
+				"Screen",
+				"SCREENWIDTH"
+			],
+			[
+				"ax",
+				"axis"
+			],
+			[
+				"dis",
+				"dist_c〔variable〕"
+			],
+			[
+				"pos",
+				"positionB"
+			],
+			[
+				"draw",
+				"drawLine"
+			],
+			[
+				"pro",
+				"productsA"
+			],
+			[
+				"prod",
+				"productsA"
+			],
+			[
+				"lin",
+				"line"
+			],
+			[
+				"rect",
+				"rectPos"
+			],
+			[
+				"min",
+				"minIndex"
+			],
+			[
+				"top",
+				"topLeft"
+			],
+			[
+				"line",
+				"linePos"
+			],
+			[
+				"ob",
+				"objectC"
+			],
+			[
+				"pr",
+				"productsA"
+			],
+			[
+				"a",
+				"aArgs"
+			],
+			[
+				"objec",
+				"objectB"
+			],
+			[
+				"axi",
+				"axisArgs"
+			],
+			[
+				"botto",
+				"bottomRight"
+			],
+			[
+				"obj",
+				"objectB"
+			],
+			[
+				"than",
+				"thaneLines"
+			],
+			[
+				"temp",
+				"tempTrack"
+			],
+			[
+				"gene",
+				"generateTrackRand"
+			],
+			[
+				"te",
+				"tempTrack2"
+			],
+			[
+				"init",
+				"initialPosition"
+			],
+			[
+				"lim",
+				"limitTop"
+			],
+			[
+				"li",
+				"limitBottom"
+			],
+			[
+				"ran",
+				"random"
+			],
+			[
+				"SCREE",
+				"SCREENHEIGHT"
+			],
+			[
+				"pus",
+				"pushTimer"
+			],
+			[
+				"slideTi",
+				"slideTimer"
+			],
+			[
+				"st",
+				"startSlideAngle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "#Demonstration of network_matrix module\n#by William Lew\n\nfrom network_matrix import *\n\n#suppress scientific notation\nnp.set_printoptions(suppress = True)\n\n\n#4 Layer Network - [1 Input     2 Hidden      1 Output]\n#                  -2 Nodes    -4 Neurons    -1 Neuron\n#                              -3 Neurons\n\ninput_case = generate_array([[0,0],[0,1],[1,0],[1,1]])\noutput_case = generate_array([[0,1,1,0]], 1)\n\nsynapse_list = generate_synapse([2, 4, 3, 1])\nactivation_list = generate_activation([1, 1, 0])\nprint(feedforward_and_backpropagate(500, synapse_list, input_case, output_case, 0.15, activation_list))\n\n\n\n#3 Layer Network - [1 Input     2 Hidden      1 Output]\n#                  -2 Nodes    -4 Neurons    -1 Neuron\n\ninput_case = generate_array([[0,0],[0,1],[1,0],[1,1]])\noutput_case = generate_array([[0,5,5,10]], 1)\n\nsynapse_list = generate_synapse([2, 4, 1])\nactivation_list = generate_activation([1, 0])\nprint(feedforward_and_backpropagate(500, synapse_list, input_case, output_case, 0.15, activation_list))\n\n\n\n#5 Layer Network - [1 Input     2 Hidden      1 Output]\n#                  -2 Nodes    -4 Neurons    -1 Neuron\n#                              -3 Neurons\n#                              -7 Neurons\n\ninput_case = generate_array([[0,0],[0,1],[1,0],[1,1]])\noutput_case = generate_array([[1,1,1,0]], 1)\n\nsynapse_list = generate_synapse([2, 4, 3, 7, 1])\nactivation_list = generate_activation([1, 1, 1, 0])\nprint(feedforward_and_backpropagate(500, synapse_list, input_case, output_case, 0.15, activation_list))",
+			"file": "demo.py",
+			"file_size": 1461,
+			"file_write_time": 131521792215414349,
+			"settings":
+			{
+				"buffer_size": 1524,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "SDL Project",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"SDL Project",
+					"Run"
+				],
+				[
+					"SDL Project",
+					"Single File"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Main"
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Main"
+				],
+				[
+					"SDL Project",
+					"Compile"
+				],
+				[
+					"SDL Project",
+					"Single File"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"SDL Project",
+					""
+				],
+				[
+					"SDL Project",
+					"Run"
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"SDL Project",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 267.0,
+		"last_filter": "git push",
+		"selected_items":
+		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git p",
+				"Git: Pull"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add All"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add ",
+				"Git: Add All"
+			],
+			[
+				"git diff",
+				"Git: Diff All Files"
+			],
+			[
+				"git add all",
+				"Git: Add All"
+			],
+			[
+				"git his",
+				"Git: Commit history"
+			],
+			[
+				"git",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git commit ",
+				"Git: Commit"
+			],
+			[
+				"git commit me",
+				"Set Syntax: Git Commit Message"
+			],
+			[
+				"git Co",
+				"Git: Commit"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packet rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"linter",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"lint",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"g",
+				"GitGutter: Support Info"
+			],
+			[
+				"remove p",
+				"Package Control: Remove Package"
+			],
+			[
+				"mat",
+				"Material Theme: Configuration"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"matr",
+				"Material Theme: Configuration"
+			],
+			[
+				"pack",
+				"Install Package Control"
+			]
+		],
+		"width": 888.0
+	},
+	"console":
+	{
+		"height": 364.0,
+		"history":
+		[
+			"rand()",
+			"rand",
+			"#import <stdlib.h>",
+			"git"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Projects/ML-Perceptron"
+	],
+	"file_history":
+	[
+		"/C/Projects/Mustard/main.cpp",
+		"/C/Projects/ML-Perceptron/network_min.py",
+		"/C/Projects/Mustard/constants.h",
+		"/C/Projects/ML-Perceptron/demo.py",
+		"/C/Users/WilliamLew/Desktop/Toucan/Kiwi/connection.h",
+		"/C/Projects/Mustard/src/board.cpp",
+		"/C/Projects/Mustard/src/track.h",
+		"/C/Projects/Mustard/src/environment.cpp",
+		"/C/Projects/Example_Site/src/lobjects.js",
+		"/C/Projects/Example_Site/src/main.js",
+		"/C/Projects/Mustard/src/board.h",
+		"/C/Projects/Mustard/src/vector3.h",
+		"/C/Projects/Mustard/src/vector3.cpp",
+		"/C/Projects/Mustard/src/geometry.cpp",
+		"/C/Projects/Mustard/src/geometry.h",
+		"/C/Projects/Mustard/src/input.cpp",
+		"/C/Projects/Mustard/src/joiner.cpp",
+		"/C/Projects/Mustard/src/camera.cpp",
+		"/C/Projects/Mustard/src/environment.h",
+		"/C/Projects/Mustard/src/vector2.h",
+		"/C/Projects/Mustard/src/camera.h",
+		"/C/Projects/Mustard/src/vrectangle.h",
+		"/C/Users/WilliamLew/Desktop/cmu/a.py",
+		"/C/Projects/Mustard/src/joiner.h",
+		"/C/Users/WilliamLew/Desktop/cmu/b.py",
+		"/C/Users/WilliamLew/Downloads/cs112_f17_week2_linter.py",
+		"/C/Users/WilliamLew/Downloads/lab2.py",
+		"/C/Projects/Mustard/src/vector2.cpp",
+		"/C/Projects/Mustard/src/gui/gui.cpp",
+		"/C/Projects/Mustard/src/gui/gui.h",
+		"/C/Projects/Mustard/src/gui/speedometer.h",
+		"/C/Projects/Mustard/src/gui/shoeometer.h",
+		"/C/Projects/Mustard/src/gui/gbutton.h",
+		"/C/Projects/Mustard/project.sublime-project",
+		"/C/Projects/Mustard/main.h",
+		"/C/Projects/Mustard/src/constants.h",
+		"/C/Projects/Mustard/src/gbutton.h",
+		"/C/Projects/Mustard/src/gui.cpp",
+		"/C/Projects/Mustard/src/gui.h",
+		"/C/Libraries/freetype-2.8/docs/INSTALL",
+		"/C/Libraries/freetype-2.8/README",
+		"/C/Libraries/ftgl-2.1.3~rc5/docs/tutorial.dox",
+		"/C/Projects/Mustard/src/freesans.ttf",
+		"/C/Libraries/SDL2_ttf-2.0.14/i686-w64-mingw32/include/SDL2/SDL_ttf.h",
+		"/C/Projects/Mustard/Separate Axis Theorem/main.cpp",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/vrectangle.h",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/vrectangle.cpp",
+		"/C/Users/WilliamLew/Downloads/hw1.py",
+		"/C/Users/WilliamLew/Desktop/cmu.py",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/vector2.cpp",
+		"/C/Projects/Mustard/Separate Axis Theorem/main.h",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/geometry.cpp",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/geometry.h",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/rectangle.cpp",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/rectangle.h",
+		"/C/Projects/Mustard/Separate Axis Theorem/src/vector2.h",
+		"/C/Users/WilliamLew/Downloads/cs112_f17_linter.py",
+		"/C/Projects/Mustard/Separate Axis Theorem/geometry.h",
+		"/C/Projects/Mustard/Separate Axis Theorem/geometry.cpp",
+		"/C/Projects/Mustard/Separate Axis Theorem/vector2.h",
+		"/C/Users/WilliamLew/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Projects/Mustard/src/input.h",
+		"/C/Projects/Mustard/camera.cpp",
+		"/C/Projects/Mustard/Bézier Curve/main.cpp",
+		"/C/Projects/Bézier Curve/main.cpp",
+		"/C/Projects/Mustard/src/main.h",
+		"/C/Projects/Mustard/src/main.cpp",
+		"/C/Projects/Mustard/joiner.cpp",
+		"/C/Projects/Mustard/joiner.h",
+		"/C/Projects/Mustard/vector2.h",
+		"/C/Projects/Mustard/input.h",
+		"/C/Projects/Mustard/geometry.h",
+		"/C/Projects/Mustard/geometry.cpp",
+		"/C/Program Files/Sublime Text 3/Packages/C++.sublime-package",
+		"/C/Users/WilliamLew/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/Users/WilliamLew/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Projects/Example_Site/index.html",
+		"/C/Projects/Hotdog/Hotdog/board.cpp",
+		"/C/Projects/Hotdog/Hotdog/board.h",
+		"/C/Projects/Hotdog/Hotdog.sln",
+		"/C/Users/WilliamLew/AppData/Roaming/Sublime Text 3/Packages/AdvancedNewFile/README.md",
+		"/C/Users/WilliamLew/AppData/Roaming/Sublime Text 3/Packages/User/AdvancedNewFile.sublime-settings",
+		"/C/Users/WilliamLew/AppData/Roaming/Sublime Text 3/Packages/AdvancedNewFile/AdvancedNewFile.sublime-settings"
+	],
+	"find":
+	{
+		"height": 47.0
+	},
+	"find_in_files":
+	{
+		"height": 300.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"resetVisibleRange",
+			"tempPolygon.emplace_back(railList[0][x]);",
+			"[0]",
+			"[1]",
+			"min",
+			"50",
+			"top",
+			"bottom",
+			"top",
+			"bottom",
+			"top",
+			"bottom",
+			"Vector2",
+			"6",
+			");\n",
+			"25",
+			"100",
+			"trackCompliment",
+			"releaseSlide",
+			"recoverSlide",
+			"needToReleaseSlide",
+			"interval",
+			"5",
+			"\\",
+			"Init",
+			"\\",
+			"x",
+			"linePos",
+			"x",
+			"maxX",
+			"x",
+			"rectMaxY",
+			"rectMinY",
+			"maxY",
+			"MinY",
+			"minY",
+			"rectY",
+			"yCoords",
+			"double",
+			"**",
+			"topLeft",
+			"y",
+			"thaneLines",
+			"board.length",
+			"board.position",
+			"height",
+			"width",
+			"rotation",
+			"angle",
+			"((",
+			"angle",
+			"degrees",
+			"angle",
+			"Rectangle",
+			"y",
+			"x",
+			"spacing",
+			"count",
+			"spacing",
+			"count",
+			"generateTrack",
+			"std::co",
+			"width",
+			"\\",
+			"Projects",
+			"slideSpeed",
+			"slideTime",
+			"board.velocity",
+			"\\",
+			"create",
+			"init"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "demo.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1524,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 47.0
+	},
+	"input":
+	{
+		"height": 122.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 323.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 268.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 86.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"mai",
+				"main.cpp"
+			],
+			[
+				"main",
+				"main.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 249.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

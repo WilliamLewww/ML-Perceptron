@@ -1,5 +1,3 @@
-#Fully Connected Recurrent Neural Network
-#by William Lew
 import numpy as np
 import math
 def __logsig(value, derivative = 0):
@@ -54,4 +52,14 @@ def feedforward_and_backpropagate(loop_count, synapse_list, input_case, output_c
             synapse_list[x] += layer_list[x].T.dot(layer_delta_list[len(synapse_list) - x - 1]) * learning_rate
     return layer_list[len(layer_list) - 1]
 
+np.set_printoptions(suppress = True)
+#4 Layer Network - [1 Input     2 Hidden      1 Output]
+#                  -2 Nodes    -4 Neurons    -1 Neuron
+#                              -3 Neurons
 
+input_case = generate_array([[0,0],[0,1],[1,0],[1,1]])
+output_case = generate_array([[0,1,1,0]], 1)
+
+synapse_list = generate_synapse([2, 4, 3, 1])
+activation_list = generate_activation([1, 1, 0])
+print(feedforward_and_backpropagate(6000, synapse_list, input_case, output_case, 0.15, activation_list))
